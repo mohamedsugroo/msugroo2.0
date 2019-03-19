@@ -1,0 +1,30 @@
+<div class="_page">
+	<div class="container page_wrapper">
+		<div class="single_review">
+			
+			<div class="row">
+				<div class="col-md-2">
+					<%= image_tag @review.avatar(:medium), class: 'avatar' %>
+				</div>
+				<div class="col">
+					<h2>
+					  <%= @review.company_name %>
+					</h2>
+
+					<p>
+					  <%= @review.industry %>
+					</p>	
+				</div>
+			</div>
+
+			<div class="review_info">
+			  <%= @review.comment %>
+			</div>
+			<br><br>
+			<%= link_to 'Edit Review', edit_review_path(@review), class: 'button' %>
+
+			
+
+		</div>
+	</div>
+</div>

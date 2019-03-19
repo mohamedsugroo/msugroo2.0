@@ -1,0 +1,48 @@
+.form-control {
+	width: 100%;
+	padding: 12px;
+	font-size: 1.2em;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	border-radius: 3px;
+	border: 2px solid #f1f1f1;
+}
+
+.btn-large {
+	padding: 12px;
+	font-size: 1.2em;
+	border: none;
+	background: #4545bd;
+	margin-bottom: 10px;
+	color: white;
+	cursor: pointer;
+	border-radius: 3px;
+
+}
+
+
+
+.form {
+
+	textarea {
+		min-width: 100%;
+		max-width: 100%;
+		border-radius: 3px;
+		border: 2px solid #f1f1f1;
+		outline: none;
+	}
+
+	label {
+		font-size: 1.1em;
+		font-weight: 300;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+
+	input {
+		outline: none;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+}

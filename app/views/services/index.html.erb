@@ -1,0 +1,50 @@
+<% set_meta_tags title: 'What we do | Our Services',
+                 description: 'Topics we are talking about',
+                 keywords: 'Somali web development agency, Webdevelopment agency, london web development agency' %>
+
+
+<div class="_page">
+<p id="notice"><%= notice %></p>
+
+<section class="sectionfiller">
+  <div class="container boxIt">
+      <h1 class="title">WHAT WE DO</h1>
+      <p class="content">
+          We do Digital. We’re your web design company, web development agency and digital marketing team all rolled into one very special integrated digital service.
+      </p>
+  </div>
+</section>
+
+
+<% @services.each do |service| %>
+  <section class="sectionfiller">
+    <div class="featuredImage" style="background-image: url('<%= service.cover(:original) %>')"></div>
+
+    <div class="container boxIt">
+        <h1 class="title"><%= service.title %></h1>
+        <p class="content">
+            <%= service.summary %>
+        </p>
+        <a class="itemLink" href="<%= service_path(service) %>">
+            Learn More About Our <%= service.service_name %> Services
+        <div class="btm"></div>
+        </a>
+    </div>
+  </section>
+  <%#= link_to 'Edit', edit_service_path(service) %>
+  <%#= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+
+<% if user_signed_in? %>
+  <div class="container">
+    <%= link_to 'New Service', new_service_path %>
+  </div>
+<% end %>
+
+
+
+<div class="spaced_footer"></div>
+
+</div>
+

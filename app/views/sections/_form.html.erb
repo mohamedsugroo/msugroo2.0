@@ -1,0 +1,61 @@
+<div class="breath">
+<%= form_for (@section) do |form| %>
+  <% if section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+
+      <ul>
+      <% section.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :service_id %>
+    <%= form.collection_select :service_id, Service.all, :id, :title, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cover %>
+    <%= form.file_field :cover, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subheading %>
+    <%= form.text_field :subheading, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :service_name %>
+    <%= form.text_field :service_name, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :summary %>
+    <%= form.text_area :summary, class: 'form-control' %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.cktext_area :content %>
+  </div>
+
+
+  <div class="field">
+    <%#= form.label :user_id %>
+    <%#= form.number_field :user_id, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Publish', class: 'btn-large' %>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,52 @@
+<% set_meta_tags title: @service.title,
+                 description: @service.sub_header,
+                 keywords: 'Somali web development agency, Webdevelopment agency, london web development agency' %>
+
+<div class="_page">
+
+
+	<section class="sectionfiller">
+	    <div class="container boxIt">
+	        <h1 class="title"><%= @service.title %></h1>
+	        <% if @service.sub_header %>
+	        	<h2 class="subheader"><%= @service.sub_header %></h2>
+	        <% end %>
+	        <p class="content">
+	            <%= @service.summary %>
+	        </p>
+
+		<% if user_signed_in? %>
+
+	        <%= link_to 'Edit', edit_service_path(@service) %> |
+	        <%= link_to 'Back', services_path %>
+
+        <% end %>
+
+	    </div>
+	</section>
+
+	<% @sections.each do |section| %>
+
+		<section class="sectionfiller">
+		    <div class="featuredImage" style="background-image: url('<%= section.cover(:original) %>')"></div>
+
+		    <div class="container boxIt">
+		        <h1 class="title"><%= section.title %></h1>
+		        <p class="content">
+		            <%= section.summary %>
+		        </p>
+		        <a class="itemLink" href="<%= service_section_path(@service, section) %>">
+		            Learn More About Our <%= section.service_name %> Services
+		        <div class="btm"></div>
+		        </a>
+		         <%#= link_to 'Destroy', section, method: :delete, class: "itemLink" %>
+		    </div>
+		</section>
+
+	<% end %>
+
+
+	<p id="notice"><%= notice %></p>
+	<div class="spaced_footer"></div>
+
+</div>

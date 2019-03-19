@@ -1,0 +1,110 @@
+.review {
+    background: #1d1d32;
+    width: 100%;
+    max-width: 500px;
+    min-height: 150px;
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+
+    .content {
+        padding: 20px;
+        padding-top: 0;
+        font-weight: 300;
+        line-height: 1.2rem;
+    }
+
+
+    .userinfo {
+        // background: red;
+        padding: 12px;
+
+        .close {
+            float: right;
+            margin-top: -15px;
+            padding: 8px;
+            font-size: 1.2rem;
+            border: none;
+            background: none;
+            color: #4545bd;
+            cursor: pointer;
+            outline: none;
+        }
+        .avatar {
+            width: 70px;
+            height: 70px;
+            background: red;
+            margin-top: -30px;
+            margin-left: 4px;
+            float: left;
+            margin-right: 10px;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .company_name {
+            color: #9b9b9b;
+        }
+
+    }
+}
+
+
+.page_wrapper {
+    padding-top: 120px;
+
+    .single_review {
+        background: white;
+        padding: 30px;
+        width: 600px;
+        margin: 0 auto;
+        border-radius: 2px;
+        box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.08);
+
+        h2 {
+            padding: 0;
+            margin: 0;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            padding-left: 10px;
+        }
+
+        img.avatar {
+            width: 90px;
+            // border-radius: 10%;
+        }
+
+        .review_info {
+            font-weight: 300;
+            font-size: 1.2em;
+            padding-top: 10px;
+        }
+
+        .editable {
+            text-align: center;
+            padding: 12px;
+            padding-top: 30px;
+        }
+
+        .button {
+            padding: 12px;
+            border: 1px solid #4545bd;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 40px;
+            cursor: pointer;
+            color: #4545bd;
+            transition: all .3s ease;
+
+            &:hover {
+                background: #4545bd;
+                color: #f1f1f1;
+            }
+        }
+    }
+}

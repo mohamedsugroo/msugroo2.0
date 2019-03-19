@@ -1,0 +1,42 @@
+.sectionfiller {
+    margin: 0 auto;
+    padding-top: 60px;
+
+    .boxIt {
+        width: 800px;
+    }
+
+    .title {
+        font-weight: 600;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+    }
+
+    .content {
+        font-weight: 300;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    .featuredImage {
+        width: 100%;
+        height: 400px;
+        background-color: #4545bd;
+        margin-bottom: 60px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .itemLink {
+        text-decoration: none;
+        color: inherit;
+        text-transform: capitalize;
+        .btm {
+            width: 200px;
+            height: 3px;
+            margin-left: 6px;
+            background: #4544bd94;
+            margin-top: 10px;
+        }
+    }
+}

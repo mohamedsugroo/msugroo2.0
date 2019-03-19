@@ -1,0 +1,13 @@
+
+<div class="review">
+
+    <div class="userinfo">
+        <div class="avatar" style="background-image: url(<%= random_review.avatar(:medium)%>)"></div>
+        <label class="username"> <%= random_review.company_name %> </label> <br>
+        <label class="company_name"> <%= random_review.industry %></label>
+        <button class="close"><i class="fas fa-sync"></i></button>
+    </div>
+    <div class="content">
+        <%= random_review.comment %>
+    </div>
+</div>

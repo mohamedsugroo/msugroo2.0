@@ -1,0 +1,74 @@
+<div class="container">
+
+<%= form_with(model: block, local: true) do |form| %>
+  <% if block.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(block.errors.count, "error") %> prohibited this block from being saved:</h2>
+
+      <ul>
+      <% block.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :work_id %>
+    <%= form.collection_select :work_id, Work.order("created_at DESC"), :id, :company_name, { include_blank: true }, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :block_style %>
+    <%= form.select :block_style,[['Style 1'],['Style 2'],['Style 3']], class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, class: 'hidden' %>
+    <trix-editor input="block_content"></trix-editor>
+  </div>
+
+  <h1 class="title">
+    Style
+  </h1>
+
+  <div class="row">
+    <div class="col">
+      <div class="field">
+        <%= form.label :block_type %>
+        <%= form.select :block_type, [['image_left_text_right'],['image_top_text_bottom'],['text_only']], class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="field">
+        <%= form.label :block_width %>
+        <%= form.select :block_width, [['fullwidth'],['boxed']], class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="field">
+        <%= form.label :block_content_wrapper %>
+        <%= form.select :block_content_wrapper, [['section'],['div'],['list']], class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+</div>

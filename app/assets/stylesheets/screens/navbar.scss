@@ -1,0 +1,70 @@
+@media only screen and (max-width: 950px) {
+  #nav {
+    // background-color: lightblue;
+    padding: 2px;
+    padding-bottom: 10px;
+    padding-top: 6px;
+
+    .btn-menu {
+    	display: inline-block;
+    }
+
+    .brand {
+    	padding: 12px;
+    }
+
+    .collapsible {
+    	position: fixed;
+    	left: -3000px;
+    	transition: all .3s ease;
+
+    	.fixed-to-right {
+    		opacity: 0;
+    	}
+    }
+
+    .right {
+    	padding: 0;
+    	margin: 0;
+    }
+
+    label {
+    	padding: 0;
+    	margin: 0;
+    }
+
+  }
+
+	#mobile:checked ~ #nav > .right > .collapsible{
+    	left: 0px;
+    	top: 0;
+    	width: 100%;
+    	height: 100%;
+    	background: white ;
+    	text-align: center;
+    	padding-top: 30px;
+
+    	.NavLink {
+    		display: block;
+    		margin: 4px;
+    		bottom: 10px;
+    	}
+    	.NavButton {
+    		width: 60vw;
+    		margin-top: 30px;
+    		margin-left: 0;
+    	}
+
+    	.fixed-to-right {
+			position: fixed;
+			top: 0;
+			right: 0;
+			opacity: 1;
+		}
+    }
+
+}
+
+.hidden {
+	display: none;
+}

@@ -1,0 +1,65 @@
+<div class="image_slider">
+	<div class="filler">
+
+	<div class="CTAbox">
+
+
+		<div class="title">
+			We craft <br>
+			digital experiences <br>
+			that excite & inspire
+		</div>
+		<button onclick="location.href='<%= lets_talk_path %>'" class="btnCTA">
+			Lets Talk 
+		</button>
+
+	</div>
+
+	</div>
+	
+</div>
+
+<div class="helloworld">
+	<div class="container">
+		<div class="title">
+			LONDON DIGITAL AGENCY
+		</div>
+		<div class="content">
+			We’re a London web design and web development agency, providing fresh, creative digital services to businesses who want to grow online. Focusing on results, we use our technical skill and industry insight to help you meet your digital goals. Whether that’s lowering your bounce rate with interactive web design or bringing brand new traffic and income streams to your website. Talk to us about your project to get started.
+		</div>
+	</div>
+</div>
+
+
+<div class="blog_posts">
+
+	<div class="container">
+		<div>
+			<h2 class="title">
+				Topics we are talking about
+			</h2>
+		</div>
+		<div class="row">
+			<% @posts.each do |post|%>
+			<div class="col">
+				<a href="<%= post_path(post) %>">
+					<div class="cover_photo" style="background-image: url(<%= post.featuredimage(:medium)%>)">
+					</div>
+
+					<div class="info">
+						<%= truncate(post.title, length:60) %>
+					</div>
+				</a>
+
+			</div>
+			<% end %>
+		</div>
+	</div>
+	
+</div>
+
+
+<div class="ourworks_list">
+	
+</div>
+

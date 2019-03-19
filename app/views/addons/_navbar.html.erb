@@ -1,0 +1,29 @@
+<input type="checkbox" id="mobile" class="hidden">
+<div id="nav">
+  <div class="brand">
+    <a href="<%= root_path %>">
+    <div class="symbol"></div>
+    <h1 class="sitename">MSUGROO</h1>
+    </a>
+  </div>
+  <div class="right">
+
+    <div class="collapsible">
+    
+    <a class="NavLink" href="/who_we_are">WHO WE ARE</a> 
+    <a class="NavLink" href="<%= services_path %>">WHAT WE DO</a> 
+    <a class="NavLink" href="<%= posts_path %>">OUR TWO CENTS</a> 
+    <a class="NavLink" href="<%= works_path %>">OUR WORK</a> 
+    <a class="NavButton" href="<%= lets_talk_path %>">LET'S TALK</a>
+
+      <label for="mobile" class="btn-menu mobile-only fixed-to-right btn-large">
+        <i class="fas fa-times"></i>
+      </label>
+    </div>
+    
+    <label for="mobile" class="btn-menu mobile-only">
+      <i class="fas fa-bars"></i>
+    </label>
+
+  </div>
+</div>

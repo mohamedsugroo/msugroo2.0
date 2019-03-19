@@ -1,0 +1,62 @@
+.wrapper_letstalk {
+	width: 60%;
+	padding-top: 50px;
+	margin: 0 auto;
+}
+
+
+.form {
+	input {
+	    padding: 12px;
+	    width: 100%;
+	    font-size: 1.2rem;
+	    border-radius: 3px;
+	    border: 2px solid #f1f1f1;
+	    text-transform: capitalize;
+        transition: all .25s ease;
+
+	    &:focus {
+	    	border: 2px solid #4545bd;
+	    }
+	}
+
+
+	.custom-select {
+		border: 2px solid #f1f1f1;
+		padding: 12px;
+        transition: all .25s ease;
+        border-radius: 3px;
+        position: relative;
+		font-family: Arial;
+
+		select {
+			width: 100%;
+			background-color: transparent;
+			-webkit-appearance:none;
+			border: none;
+			font-size: 1.2rem;
+			outline: none;
+			text-transform: capitalize;
+		}
+
+		&:hover {
+			border: 2px solid #4545bd;
+		}
+	}
+
+
+	.btn_continue {
+		padding: 12px;
+		border: none;
+		background: #4545bd;
+		color: white;
+		margin-top: 6px;
+		margin-bottom: 6px;
+		font-size: 1.2em;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+}
+
+
+

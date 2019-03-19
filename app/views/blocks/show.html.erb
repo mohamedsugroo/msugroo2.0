@@ -1,0 +1,42 @@
+<div class="_page">
+
+<p>
+  <strong>Work:</strong>
+  <%= @block.work_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @block.title %>
+</p>
+
+<p>
+  <strong>Block style:</strong>
+  <%= @block.block_style %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @block.content %>
+</p>
+
+<p>
+  <strong>Block type:</strong>
+  <%= @block.block_type %>
+</p>
+
+<p>
+  <strong>Block width:</strong>
+  <%= @block.block_width %>
+</p>
+
+<p>
+  <strong>Block content wrapper:</strong>
+  <%= @block.block_content_wrapper %>
+</p>
+
+<%= link_to 'Edit', edit_block_path(@block) %> |
+<%= link_to 'Back', blocks_path %>
+
+
+</div>

@@ -1,0 +1,139 @@
+<div class="work_featured_image_parallax" style="background-image: url(<%= @work.cover(:original)%>);">
+</div>
+<div class="works">
+<section class="work_featured_image" >
+  <!-- style="background-image: url(<%#= @work.cover(:original)%>);" -->
+
+  <div class="fullcover">
+    
+    <div class="info">
+
+      <div class="shati animated fadeInDown">
+        <div class="company">
+          <%= @work.company_name %>
+        </div>
+        <div class="industry">
+          <%= @work.industry %>
+        </div>
+      </div>
+
+      <div class="website">
+
+        <% if @work.url? %>
+          
+          <a href="<%= @work.url %>">
+            Visit <%= @work.website %>
+          </a>
+        <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="_page works">
+<% @work.blocks.each do |block| %>
+<% if block.block_content_wrapper == 'list' %>
+  <div class="list">
+    <section class="sectionfiller">
+    <div class="content">
+      <%= block.content.html_safe %>
+    </div>
+  </section>
+  </div>
+
+<% end %>
+
+
+<% if block.block_content_wrapper == 'section' %>
+  <section class="sectionfiller section_boxed">
+
+    <%= block.title %> 
+    <div class="content">
+      <%= block.content.html_safe %> 
+    </div>
+
+  </section>
+<% end %>
+
+<% if block.block_content_wrapper == 'div' %>
+
+  <div class="sectionfiller section_boxed">
+
+    <%= block.title %> 
+    <div class="content">
+      <%= block.content.html_safe %> 
+    </div>
+    
+  </div>
+
+<% end %>
+
+<!-- 
+  <section class="sectionfiller">
+    <% if block.block_width == 'boxed' %>
+    <div class="section_boxed content <%= block.block_type %>">
+      <% if block.block_type == 'text_only' %>
+      <% if block.title? %>
+        <h2 class="title">
+          <%= block.title %> 
+        </h2>
+      <% end %>
+        <div class="content">
+          <%= block.content.html_safe %>
+        </div>
+      <% end %>
+    </div>
+
+    <% elsif block.block_width == 'fullwidth' %>
+      <div class="section_full_width">
+        <%= block.title %>
+
+        <div class="content">
+          <%= block.content.html_safe %>
+        </div>
+      </div>
+
+      <% else %>
+        <%= block.title %>
+    <% end %>
+  </section> -->
+<% end %>
+
+
+
+
+<% if user_signed_in? %>
+	<div class="container">
+		<%= link_to 'Edit', edit_work_path(@work) %> |
+		<%= link_to 'Back', works_path %>
+	</div>
+<% end %>
+
+
+</div>
+
+<style>
+  #nav {
+    background: transparent;
+  }
+
+  #nav .NavLink {
+    color:  #f1f1f1;
+  }
+
+  #nav .NavLink:hover {
+    color:  white;
+  }
+
+  #nav .sitename {
+    color:  #f1f1f1;
+  }
+
+  .symbol {
+    background-image: url('/logo_white.svg') !important;
+  }
+</style>

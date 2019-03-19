@@ -1,0 +1,44 @@
+<div class="_page">
+
+  <section class="sectionfiller">
+    <div class="container boxIt">
+        <h1 class="title">OUR WORK</h1>
+        <p class="content">
+            We do Digital. We’re your web design company, web development agency and digital marketing team all rolled into one very special integrated digital service.
+        </p>
+    </div>
+
+    <br><br>
+  </section>
+
+  <div class="container">
+
+    <div class="workwrapper">
+
+
+      <% @works.each do |work| %>
+        <div class="work" style="background-image: url(<%= work.cover(:original)%>);">
+          <a href="<%= work_path(work) %>">
+            <div class="coverbg">
+              <div class="info">
+                <div class="company"><%= work.company_name %></div>
+                <div class="industry"><%= work.industry %></div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <%#= link_to 'Show', work %>
+        <%#= link_to 'Edit', edit_work_path(work) %>
+        <%#= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <div class="container">
+          <%#= link_to 'New Work', new_work_path %>
+      </div>
+      <% end %>
+
+  </div>
+
+  </div>
+</div>

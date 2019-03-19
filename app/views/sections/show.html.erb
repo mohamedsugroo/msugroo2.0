@@ -1,0 +1,33 @@
+<div class="_page">
+
+  <p id="notice"><%= notice %></p>
+
+
+  <section class="sectionfiller">
+      
+      <div class="container boxIt">
+          <h1 class="title"><%= @section.title %></h1>
+
+          <% if @section.subheading %>
+            <h2 class="subheader"><%= @section.subheading %></h2>
+          <% end %>
+
+      </div>
+        
+        <div class="featuredImage" style="background-image: url('<%= @section.cover(:original) %>')"></div>
+
+        <div class="container boxIt">
+          <div class="content">
+              <%= @section.content.html_safe %>
+          </div>
+
+          <%#= link_to 'Edit', edit_section_path(@section) %> 
+          <%#= link_to 'Back', services_path %>
+
+      </div>
+  </section>
+
+  
+
+  <div class="spaced_footer"></div>
+</div>

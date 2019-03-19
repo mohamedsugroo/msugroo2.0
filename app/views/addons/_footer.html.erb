@@ -1,0 +1,55 @@
+<div class="footer">
+        <div class="callToAction">
+            <div class="row">
+                <div class="col msg">
+                    If you're a forward-thinking business with an interesting branding or web design concept, drop us a line.
+                </div>
+                <div class="col-md-3 btnSpace">
+                    <a class="callToActionBTN" href="/lets-talk">Let's Talk</a>
+                </div>
+            </div>
+        </div>   
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="resource_title">Key Services</h3>
+
+                            <% services.each do |s| %>
+                                <li class="resource_link">
+                                    <a href="<%= service_path(s)%>" class="resource_link">
+                                        <%= s.title %>
+                                    </a>
+                                </li>
+                            <% end %>
+                        </div>
+                        <div class="col">
+                            <h3 class="resource_title">Who We Are</h3>
+                            <li class="resource_link"><a href="<%= works_path %>">Our Work</a></li>
+                            <li class="resource_link"><a href="<%= posts_path %>">Our Two Cents</a></li>
+                            <li class="resource_link"><a href="/privacypolicy">Privacy Policy</a></li>
+                        </div>
+                        <div class="col">
+                            <h3 class="resource_title">Resources</h3>
+                            <li class="resource_link"><a href="#">Terms</a></li>
+                            <li class="resource_link"><a href="/sitemap.xml">Sitemap</a></li>
+                            <li class="resource_link"><a href="/lets-talk">Lets Talk</a></li>
+                        </div>
+                    </div>
+
+                </div>
+                <% if random_review %>
+                <div class="col-md-5">
+                    <%= render  'addons/randomreview' %>
+                </div>
+                <% end %>
+            </div>
+            
+        </div>
+        <div class="made_ldn">
+            Made With <i class="fas fa-heart color-red"></i> In London
+        </div>
+    </div>

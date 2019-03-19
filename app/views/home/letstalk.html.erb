@@ -1,0 +1,80 @@
+<div class="_page">
+
+		<section class="sectionfiller first_unit">
+
+			<div class="container boxIt">
+				<h1 class="title"> LET'S TALK </h1>
+				<p class="content"> 
+					Get in touch with us to kick off your new project using our contact form. 
+				</p>
+
+				<div class="form contact_form">
+					<div class="reason">
+						<div class="custom-select">
+							<select id="other_option" name="other_option">
+								<option value="options" disabled selected>
+									What would you like to talk about?
+								</option>
+								<% services.each do |s| %>
+									<option value="<%= s.title %>">
+										<%= s.title %>
+									</option>
+								<% end %>
+							  <option value="other">other</option>
+							</select>
+						</div>
+
+						<div class="other hidden">
+							<input type="text" id="reason_for_contact" placeholder="What would you like to talk about">
+						</div>
+
+						<button class="btn_continue hidden" id="outputreason">
+							Continue <i class="fas fa-chevron-right"></i>
+						</button>
+
+					</div>
+
+
+					<div class="initial hidden">
+						<input type="text" placeholder="Full Name" id="full_name">
+						<input type="text" placeholder="Email" id="email">
+						<input type="text" placeholder="Phone Number" id="phone">
+						
+						<button class="btn_continue" id="outputinitial">
+							Continue <i class="fas fa-chevron-right"></i>
+						</button>
+					</div>
+
+
+
+					<div class="comment hidden">
+						<trix-editor input="x" id="msg"></trix-editor>
+						<button class="btn_continue" id="outputcomment">Send</button>
+					</div>
+
+				</div>
+
+			</div>
+
+		    <div class="spaced_footer"></div>
+
+		</section>
+
+		<section class="sectionfiller thanks hidden text-align-center">
+
+		    <div class="spaced_footer"></div>
+
+			<div class="container boxIt">
+				<p class="content"> 
+					Hi <span class="fullName"></span> some one will get intouch with you shortly
+				</p>
+
+				<h1 class="title"> Thanks for getting in touch with us</h1>
+
+				
+			</div>
+
+		    <div class="spaced_footer"></div>
+		</section>
+
+</div>

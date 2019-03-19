@@ -1,0 +1,70 @@
+<% set_meta_tags title: @post.title,
+                 description: 'hello world',
+                 keywords: 'Somali web development agency, Webdevelopment agency, london web development agency'
+                 %>
+
+
+<div class="_page post">
+
+	<section class="sectionfiller">
+	    <div class="container boxIt">
+	        <div class="time_ago">
+	        	<%= time_ago_in_words( @post.created_at)%> ago
+	        </div>
+	        <h1 class="title"><%= @post.title %></h1>
+	        <div class="user_name">
+	        	By <a href="#">MOHAMED HASSAN</a>
+	        </div>
+	        
+	    </div>
+
+	    <% if @post.featuredimage? %>
+	    	<div class="featuredImage" style="background-image: url('<%= @post.featuredimage(:original) %>')">
+	    	</div>
+	    <% end %>
+
+	</section>
+
+	<section class="sectionfiller">
+		<div class="container boxIt">
+	        <div class="content">
+	            <%= @post.content.html_safe %>
+	        </div>
+	    </div>
+	</section>
+
+	
+
+	<div class="related_topics">
+		<div class="container">
+
+			<div>
+				<h3 class="related_title">RELATED TOPICS</h3>
+			</div>
+			<div class="row">
+
+			<% @posts.each do |post| %>
+	            <div class="col post_item">
+	              <a href="<%= post_path(post)%>">
+	                <% if post.featuredimage? %>
+	                  <div class="cover_photo" style="background-image: url(<%= post.featuredimage(:medium)%>)"></div>
+	                <% end %>
+	                <% if post.featuredimage? %>
+	                    <div class="info">
+	                      <h1 class="title"><%= truncate(post.title, length: 60) %></h1>
+	                      <% else %>
+	                      <div class="info-full">
+	                        <h1 class="title"><%= truncate(post.title, length: 60) %></h1>
+	                  <% end %>
+	                  <p class="time"><%= time_ago_in_words(post.created_at) %> ago</p>
+	                </div>
+	              </a>
+	            </div>
+			<% end %>
+			</div>
+		</div>
+	</div>
+
+
+<!-- <div class="spaced_footer"></div> -->
+</div>
