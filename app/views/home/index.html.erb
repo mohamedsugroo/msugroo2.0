@@ -60,6 +60,44 @@
 
 
 <div class="ourworks_list">
+
+	<div class="container">
+
+		<div>
+			<h2 class="title">
+				OUR WORK
+			</h2>
+		</div>
+
+
+		<div class="workwrapper">
+
+
+	      <% @works.each do |work| %>
+	        <div class="work" style="background-image: url(<%= work.cover(:original)%>);">
+	          <a href="<%= work_path(work) %>">
+	            <div class="coverbg">
+	              <div class="info">
+	                <div class="company"><%= work.company_name %></div>
+	                <div class="industry"><%= work.industry %></div>
+	              </div>
+	            </div>
+	          </a>
+	        </div>
+	        <%#= link_to 'Show', work %>
+	        <%#= link_to 'Edit', edit_work_path(work) %>
+	        <%#= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %>
+	      <% end %>
+
+	      <% if user_signed_in? %>
+	        <div class="container">
+	          <%#= link_to 'New Work', new_work_path %>
+	      </div>
+	      <% end %>
+
+		</div>
+
+	</div>
 	
 </div>
 

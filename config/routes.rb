@@ -21,8 +21,20 @@ Rails.application.routes.draw do
   resources :sections, except: [ :show]
   root 'home#index'
 
-  resources :services, path: 'whatwedo', :except => [:edit, :new, :destroy] do
-  	resources :sections, path: '', only: [:index, :show]
+  # resources :services, path: 'whatwedo', :except => [:edit, :new, :destroy] do
+  # 	resources :sections, path: ''
+  #   # , only: [:index, :show]
+  # end
+
+
+  resources :works do
+    resources :blocks
   end
+
+
+  resources :services, path: 'whatwedo'  do
+    resources :sections, path: 'topic'
+  end
+
 
 end

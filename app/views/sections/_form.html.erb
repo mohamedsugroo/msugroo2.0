@@ -1,21 +1,19 @@
 <div class="breath">
-<%= form_for (@section) do |form| %>
-  <% if section.errors.any? %>
+<%#= form_for (@section) do |form| %>
+<%= form_for [@service, @section] do |form| %>
+  <% if @section.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+      <h2><%= pluralize(@section.errors.count, "error") %> prohibited this section from being saved:</h2>
 
       <ul>
-      <% section.errors.full_messages.each do |message| %>
+      <% @section.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :service_id %>
-    <%= form.collection_select :service_id, Service.all, :id, :title, class: 'form-control' %>
-  </div>
+
 
   <div class="field">
     <%= form.label :cover %>

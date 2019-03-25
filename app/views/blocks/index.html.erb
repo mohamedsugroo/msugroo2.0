@@ -1,44 +1,46 @@
-<div class="_page">
+<div class="working_blocks">
+  <div class="_page">
+    <div class="container">
 
-  <div class="container">
+      <h1>Building Blocks</h1>
 
-    <h1>Building Blocks</h1>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Work</th>
-          <th>Title</th>
-          <th>Block style</th>
-          <th>Content</th>
-          <th>Block type</th>
-          <th>Block width</th>
-          <th>Block content wrapper</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @blocks.each do |block| %>
+      <table>
+        <thead>
           <tr>
-            <td><%= block.work_id %></td>
-            <td><%= block.title %></td>
-            <td><%= block.block_style %></td>
-            <td><%= block.content %></td>
-            <td><%= block.block_type %></td>
-            <td><%= block.block_width %></td>
-            <td><%= block.block_content_wrapper %></td>
-            <td><%= link_to 'Show', block %></td>
-            <td><%= link_to 'Edit', edit_block_path(block) %></td>
-            <td><%= link_to 'Destroy', block, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <th>Work</th>
+            <th>Title</th>
+            <th>Block style</th>
+            <th>Content</th>
+            <th>Block type</th>
+            <th>Block width</th>
+            <th>Block content wrapper</th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
 
-    <br>
+        <tbody>
+          <% @blocks.each do |block| %>
+            <tr>
+              <td><%= block.work_id %></td>
+              <td><%= block.title %></td>
+              <td><%= block.block_style %></td>
+              <td><%= block.content %></td>
+              <td><%= block.block_type %></td>
+              <td><%= block.block_width %></td>
+              <td><%= block.block_content_wrapper %></td>
+              <td><%= link_to 'Show', work_block_path(block.work,block) %></td>
+              <td><%= link_to 'Edit', edit_work_block_path(block.work,block) %></td>
+              <td><%= link_to 'Destroy', block, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<%= link_to 'New Block', new_block_path %>
+      <br>
 
-</div>
+      <%= link_to 'New Block', new_block_path %>
+
+    </div>
+  </div>
+
 </div>

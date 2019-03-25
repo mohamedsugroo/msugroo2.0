@@ -2,7 +2,7 @@ class BlocksController < ApplicationController
   before_action :set_block, only: [:show, :edit, :update, :destroy]
 
   def index
-    @blocks = Block.all
+    @blocks = Block.order("created_at DESC")
   end
 
   def show

@@ -51,9 +51,10 @@
       <%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
     
 
-    <br>
-
-    <%= link_to 'New Post', new_post_path %>
+      <br>
+      <% if user_signed_in? %>
+        <%= link_to 'New Post', new_post_path %>
+      <% end %>
 
     </div>
 
